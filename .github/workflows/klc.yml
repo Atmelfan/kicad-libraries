@@ -33,4 +33,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run symbol checker
-        run: ./kicad-library-utils/klc-check/check_symbol.py *.kicad_sym
+        run: |
+          x=$(./kicad-library-utils/klc-check/check_symbol.py -vv *.kicad_sym)
+          echo "$x"
+          echo "$x" | grep -q "Violating" &&  ERR=1
+          exit $ERR
+
+          

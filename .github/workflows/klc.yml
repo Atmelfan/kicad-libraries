@@ -6,9 +6,8 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+
   pull_request:
-    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,9 +33,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run symbol checker
         run: |
+          ERR=0
           x=$(./kicad-library-utils/klc-check/check_symbol.py -vv *.kicad_sym)
           echo "$x"
-          echo "$x" | grep -q "Violating" &&  ERR=1
+          echo "$x" | grep -q "Violating" && ERR=1
           exit $ERR
 
           

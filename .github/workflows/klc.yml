@@ -34,7 +34,7 @@ jobs:
       - name: Run symbol checker
         run: |
           ERR=0
-          x=$(./kicad-library-utils/klc-check/check_symbol.py -vv *.kicad_sym)
+          x=$(./kicad-library-utils/klc-check/check_symbol.py -vv -e S3.1 *.kicad_sym)
           echo "$x"
           echo "$x" | grep -q "Violating" && ERR=1
           exit $ERR

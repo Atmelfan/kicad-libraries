@@ -21,6 +21,9 @@
     (property "ki_description" "THAT 300 Series Low-Noise Matched Transistor Array" (id 6) (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "ki_fp_filters" "SO*14*3.9x8.65mm*P1.27mm*" (id 7) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (symbol "THAT300x_0_1"
       (polyline
         (pts
